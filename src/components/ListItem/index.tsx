@@ -23,9 +23,10 @@ const ListItem = ({ item, small }: Props) => {
       }}
     >
       <Card
+        elevation={small ? 0 : 1}
         sx={{
           display: 'flex',
-          my: 2,
+          my: small ? 1 : 2,
         }}
       >
         <CardMedia

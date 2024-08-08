@@ -10,7 +10,16 @@ interface Props {
 const Found = ({ item }: Props) => {
   return (
     <Box display={'flex'} flexDirection={'column'}>
-      <Typography variant="h5" display={'flex'} gap={1} alignItems={'baseline'}>
+      <img
+        src={item.image}
+        style={{
+          maxHeight: '400px',
+          width: '100%',
+          objectFit: 'contain',
+        }}
+        alt={item.title}
+      />
+      <Typography mt={2} variant="h5" display={'flex'} gap={1} alignItems={'baseline'}>
         {item.title}{' '}
         <Chip
           size="small"
@@ -25,17 +34,6 @@ const Found = ({ item }: Props) => {
           label={`Ratings: ${item.rating.count}`}
         />
       </Typography>
-
-      <img
-        src={item.image}
-        style={{
-          maxHeight: '400px',
-          width: '100%',
-          objectFit: 'contain',
-          marginTop: '20px',
-        }}
-        alt={item.title}
-      />
 
       <Typography mt={2} variant="body1">
         {item.description}{' '}

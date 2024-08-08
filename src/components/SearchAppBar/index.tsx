@@ -1,4 +1,5 @@
-import { AppBar, Toolbar, Typography } from '@mui/material';
+import { AppBar, Box, Toolbar, Typography } from '@mui/material';
+import SearchField from '../SearchField';
 
 const SearchAppBar = () => {
   return (
@@ -6,7 +7,11 @@ const SearchAppBar = () => {
       position="fixed"
       sx={{ zIndex: (theme) => theme.zIndex.drawer + 1 }}
     >
-      <Toolbar>
+      <Toolbar
+        sx={{
+          justifyContent: 'space-between',
+        }}
+      >
         <Typography
           variant="h6"
           noWrap
@@ -15,6 +20,9 @@ const SearchAppBar = () => {
         >
           Store
         </Typography>
+        <Box minWidth={'500px'}>
+          <SearchField />
+        </Box>
       </Toolbar>
     </AppBar>
   );
