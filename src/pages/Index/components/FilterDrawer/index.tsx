@@ -1,4 +1,6 @@
 import { Box, Drawer, List, Toolbar } from '@mui/material';
+import CategoryFilter from '../CategoryFilter';
+import AmountFilter from '../AmountFilter';
 
 const drawerWidth = 240;
 
@@ -17,7 +19,14 @@ const FilterDrawer = () => {
     >
       <Toolbar />
       <Box sx={{ overflow: 'auto' }}>
-        <List></List>
+        <List
+          sx={{
+            paddingX: 1,
+          }}
+        >
+          <CategoryFilter />
+          <AmountFilter />
+        </List>
       </Box>
     </Drawer>
   );

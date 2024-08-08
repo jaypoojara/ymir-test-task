@@ -17,7 +17,14 @@ const dataSlice = createSlice({
       state: DataSlice,
       { payload }: PayloadAction<Item[]>,
     ) => {
-      state.items = [...payload];
+      const items = [...payload];
+
+      const categories = Array.from(
+        new Set(items.map((item) => item.category)),
+      );
+
+      state.items = [...items];
+      state.categories = categories;
       state.initLoadState = 'loaded';
     },
     initItemsErrorAction: (state: DataSlice) => {
