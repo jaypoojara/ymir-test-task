@@ -1,6 +1,6 @@
 import { Box, Chip, Typography } from '@mui/material';
 import { Item } from '../../../../models/common/Item';
-import { StarOutline } from '@mui/icons-material';
+import { People, Star, StarOutline } from '@mui/icons-material';
 
 interface Props {
   item: Item;
@@ -9,13 +9,19 @@ interface Props {
 const Found = ({ item }: Props) => {
   return (
     <Box display={'flex'} flexDirection={'column'}>
-      <Typography variant="h5">
+      <Typography variant="h5" display={'flex'} gap={1} alignItems={'baseline'}>
         {item.title}{' '}
         <Chip
           size="small"
           color="primary"
-          icon={<StarOutline />}
+          icon={<Star />}
           label={item.rating.rate}
+        />
+        <Chip
+          size="small"
+          color="primary"
+          icon={<People />}
+          label={`Ratings: ${item.rating.count}`}
         />
       </Typography>
 
