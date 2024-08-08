@@ -1,9 +1,23 @@
-import { Autocomplete, Box, TextField } from '@mui/material';
+import {
+  Autocomplete,
+  Box,
+  createFilterOptions,
+  FilterOptionsState,
+  TextField,
+} from '@mui/material';
 import { useSelector } from 'react-redux';
 import { RootState } from '../../redux/store';
 import ItemList from '../ItemList';
 import ListItem from '../ListItem';
 import { Item } from '../../models/common/Item';
+
+const filterOptions = createFilterOptions<Item>({
+  matchFrom: 'any',
+  ignoreCase: true,
+  trim: true,
+  stringify: (item: Item) =>
+    item.title + ' ' + item.description + ' ' + item.category,
+});
 
 const SearchField = () => {
   const options = useSelector((store: RootState) => store.data.items);
@@ -16,6 +30,7 @@ const SearchField = () => {
       sx={{ maxWidth: 500 }}
       fullWidth
       onChange={handleOnChange}
+      filterOptions={filterOptions}
       renderOption={(props, option: Item) => {
         return (
           <Box paddingX={1}>
