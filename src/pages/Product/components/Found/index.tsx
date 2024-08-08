@@ -1,6 +1,7 @@
 import { Box, Chip, Typography } from '@mui/material';
 import { Item } from '../../../../models/common/Item';
 import { People, Star, StarOutline } from '@mui/icons-material';
+import Review from '../../../../components/Review';
 
 interface Props {
   item: Item;
@@ -43,6 +44,8 @@ const Found = ({ item }: Props) => {
       <Typography mt={2} variant="h4">
         ${item.price}
       </Typography>
+
+      <Review itemId={item.id} />
     </Box>
   );
 };

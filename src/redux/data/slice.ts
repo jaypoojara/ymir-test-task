@@ -4,6 +4,8 @@ import localForage from 'localforage';
 import persistReducer from 'redux-persist/es/persistReducer';
 import { initialDataState } from './initialState';
 import { Item } from '../../models/common/Item';
+import { Review } from '../../models/common/Review';
+import moment from 'moment';
 
 const dataSlice = createSlice({
   name: DATA,
@@ -30,6 +32,17 @@ const dataSlice = createSlice({
     initItemsErrorAction: (state: DataSlice) => {
       state.initLoadState = 'error';
     },
+
+    addReview: (
+      state: DataSlice,
+      { payload }: PayloadAction<Omit<Review, 'uniqueId'>>,
+    ) => {
+      const newReview: Review = {
+        ...payload,
+        uniqueId: moment().unix(),
+      };
+      state.reviews = [newReview, ...state.reviews];
+    },
   },
 });
 
@@ -38,7 +51,11 @@ const persistConfig = {
   storage: localForage,
 };
 
-export const { initItemsAction, initItemsSuccessAction, initItemsErrorAction } =
-  dataSlice.actions;
+export const {
+  initItemsAction,
+  initItemsSuccessAction,
+  initItemsErrorAction,
+  addReview,
+} = dataSlice.actions;
 
 export const dataReducer = persistReducer(persistConfig, dataSlice.reducer);
