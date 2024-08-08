@@ -9,7 +9,11 @@ const useItem = () => {
   const slug = params.slug;
 
   const item = useMemo(() => {
-    const foundItem = allItems.find((item) => item.title === slug);
+    const foundItem = allItems.find(
+      (item) =>
+        item.title.replaceAll(' ', '_').replaceAll('/', '___').toLowerCase() ===
+        slug,
+    );
     return foundItem ?? null;
   }, [allItems, slug]);
   return item;

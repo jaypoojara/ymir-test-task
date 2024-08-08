@@ -1,5 +1,6 @@
 import { AppBar, Box, Toolbar, Typography } from '@mui/material';
 import SearchField from '../SearchField';
+import { Link } from 'react-router-dom';
 
 const SearchAppBar = () => {
   return (
@@ -15,8 +16,10 @@ const SearchAppBar = () => {
         <Typography
           variant="h6"
           noWrap
-          component="div"
-          sx={{ display: { xs: 'none', sm: 'block' } }}
+          component={Link}
+          sx={{ display: { xs: 'none', sm: 'block', textDecoration: 'none' } }}
+          to={'/'}
+          color={'white'}
         >
           Store
         </Typography>

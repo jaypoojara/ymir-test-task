@@ -25,6 +25,7 @@ const CategoryFilter = () => {
         const selected = filter.includes(category);
         return (
           <Chip
+            key={category}
             label={
               <Typography variant="caption" textTransform={'capitalize'}>
                 {category}

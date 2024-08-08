@@ -11,6 +11,9 @@ const dataSlice = createSlice({
   name: DATA,
   initialState: initialDataState,
   reducers: {
+    resetLoadState: (state: DataSlice) => {
+      state.initLoadState = 'empty';
+    },
     initItemsAction: (state: DataSlice) => {
       state.initLoadState = 'loading';
     },
@@ -52,6 +55,7 @@ const persistConfig = {
 };
 
 export const {
+  resetLoadState,
   initItemsAction,
   initItemsSuccessAction,
   initItemsErrorAction,

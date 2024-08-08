@@ -1,6 +1,7 @@
 import { Box, List, Typography } from '@mui/material';
 import { Item } from '../../models/common/Item';
 import ListItem from '../ListItem';
+import { Link } from 'react-router-dom';
 
 interface Props {
   items: Item[];
@@ -19,7 +20,17 @@ const ItemList = ({ items, small }: Props) => {
   return (
     <List>
       {items.map((item: Item) => {
-        return <ListItem small={small} item={item} key={item.id} />;
+        return (
+          <Link
+            to={'/' + item.title.replaceAll(' ', '_').replaceAll('/', '___').toLowerCase()}
+            style={{
+              textDecoration: 'none',
+            }}
+            key={item.id}
+          >
+            <ListItem small={small} item={item} />
+          </Link>
+        );
       })}
     </List>
   );

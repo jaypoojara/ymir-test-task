@@ -1,15 +1,10 @@
-import {
-  Autocomplete,
-  Box,
-  createFilterOptions,
-  FilterOptionsState,
-  TextField,
-} from '@mui/material';
+import { Autocomplete, createFilterOptions, TextField } from '@mui/material';
 import { useSelector } from 'react-redux';
 import { RootState } from '../../redux/store';
-import ItemList from '../ItemList';
 import ListItem from '../ListItem';
 import { Item } from '../../models/common/Item';
+import { ChangeEvent, SyntheticEvent } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const filterOptions = createFilterOptions<Item>({
   matchFrom: 'any',
@@ -21,8 +16,16 @@ const filterOptions = createFilterOptions<Item>({
 
 const SearchField = () => {
   const options = useSelector((store: RootState) => store.data.items);
+  const navigate = useNavigate();
 
-  const handleOnChange = () => {};
+  const handleOnChange = (_: SyntheticEvent, value: Item | null) => {
+    if (value) {
+      navigate(
+        '/' +
+          value.title.replaceAll(' ', '_').replaceAll('/', '___').toLowerCase(),
+      );
+    }
+  };
 
   return (
     <Autocomplete
@@ -30,12 +33,13 @@ const SearchField = () => {
       sx={{ maxWidth: 500 }}
       fullWidth
       onChange={handleOnChange}
+      getOptionLabel={(option) => ''}
       filterOptions={filterOptions}
       renderOption={(props, option: Item) => {
         return (
-          <Box paddingX={1}>
-            <ListItem key={option.id} item={option} small={true} />
-          </Box>
+          <li {...props} key={option.id}>
+            <ListItem item={option} small={true} />
+          </li>
         );
       }}
       popupIcon={null}
