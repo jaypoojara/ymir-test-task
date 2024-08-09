@@ -3,7 +3,7 @@ import { Provider } from 'react-redux';
 import { PersistGate } from 'redux-persist/integration/react';
 import { persister, store } from '../../redux/store';
 import { ReactNode } from 'react';
-import { resetLoadState } from '../../redux/data/slice';
+import { resetLoadState } from '../../redux/productData/slice';
 
 type Props = {
   children: ReactNode;

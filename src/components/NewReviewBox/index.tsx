@@ -1,7 +1,7 @@
 import { Box, Button, TextField } from '@mui/material';
 import { ChangeEvent, useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { addReview } from '../../redux/data/slice';
+import { addReview } from '../../redux/productData/slice';
 
 type Props = {
   itemId: number;

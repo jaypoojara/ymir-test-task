@@ -1,7 +1,7 @@
 import { Box } from '@mui/material';
 import SearchAppBar from '../../components/SearchAppBar';
-import Content from './components/Content';
-import useItem from './components/useItem';
+import ProductContent from './components/ProductContent';
+import useItem from '../../hooks/useSlugItem';
 
 const ProductPage = () => {
   const item = useItem();
@@ -9,7 +9,7 @@ const ProductPage = () => {
   return (
     <Box display={'flex'}>
       <SearchAppBar />
-      <Content item={item} />
+      <ProductContent item={item} />
     </Box>
   );
 };

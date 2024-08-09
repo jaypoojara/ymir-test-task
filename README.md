@@ -27,9 +27,10 @@ The codebase is in typescript and and has two pages with a search field in AppBa
 1. HomePage: This page has the list of items persisted in the local indexed db using redux. Which supports categories filtering and price range filtering.
 2. Product Page: This page has the product details and the product review. user can post a review as anonymous user and store the reviews in local indexed DB.
 
-The folder structure is as follows: 
+The folder structure is as follows:
+
 ```hash
-.
+
 └── src
     ├── app: This has all the entry point/single use components for app initialization.
     ├── components: This has all the global components which can be reused across pages/app.
@@ -37,6 +38,7 @@ The folder structure is as follows:
     ├── pages: This the Route based Page components and related components inside it.
     └── redux: This dir has all the redux related logic and initialization along with its persistence and types.
 ```
+
 The libraries and their use is as follows:
 
 1. React Router: For page routing

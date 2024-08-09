@@ -1,5 +1,5 @@
 import { Box, Chip, Typography } from '@mui/material';
-import { Item } from '../../../../models/common/Item';
+import { Item } from '../../../../types/Item';
 import { People, Star } from '@mui/icons-material';
 import Review from '../../../../components/Review';
 

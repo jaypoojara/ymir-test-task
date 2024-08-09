@@ -2,14 +2,14 @@ import { combineReducers, Reducer } from '@reduxjs/toolkit';
 import persistReducer, {
   PersistPartial,
 } from 'redux-persist/es/persistReducer';
-import { DATA, DataSlice } from './data/type';
+import { PRODUCT_DATA, ProductDataSlice } from './productData/type';
 import localForage from 'localforage';
-import { dataReducer } from './data/slice';
+import { productDataReducer } from './productData/slice';
 import { HOME, HomeSlice } from './home/type';
 import { homeReducer } from './home/slice';
 
 type RootSlice = {
-  data: Reducer<DataSlice & PersistPartial>;
+  data: Reducer<ProductDataSlice & PersistPartial>;
   home: Reducer<HomeSlice>;
 };
 
@@ -17,11 +17,11 @@ const persistConfig = {
   key: 'root',
   storage: localForage,
   whitelist: new Array<string>(),
-  blacklist: [DATA, HOME],
+  blacklist: [PRODUCT_DATA, HOME],
 };
 
 const reducer = combineReducers<RootSlice>({
-  data: dataReducer,
+  data: productDataReducer,
   home: homeReducer,
 });
 

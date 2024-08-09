@@ -1,14 +1,14 @@
 import { Box, Typography } from '@mui/material';
-import useReviews from './useReviews';
+import useItemReviews from '../../hooks/useItemReviews';
 import NewReviewBox from '../NewReviewBox';
 import ReviewList from '../ReviewList';
 
 type Props = {
   itemId: number;
-}
+};
 
 const Review = ({ itemId }: Props) => {
-  const reviews = useReviews(itemId);
+  const reviews = useItemReviews(itemId);
 
   return (
     <Box
@@ -16,7 +16,7 @@ const Review = ({ itemId }: Props) => {
       display={'flex'}
       flexDirection={'column'}
       sx={{
-        maxWidth: '600px',
+        maxWidth: 600,
       }}
     >
       <Typography variant="h5">Reviews</Typography>

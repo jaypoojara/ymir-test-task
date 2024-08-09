@@ -1,5 +1,5 @@
 import { all } from 'redux-saga/effects';
-import { dataSaga } from './data/saga';
+import { dataSaga } from './productData/saga';
 
 const rootSaga = function* () {
   yield all([...dataSaga]);

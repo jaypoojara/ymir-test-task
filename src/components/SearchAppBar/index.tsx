@@ -1,5 +1,5 @@
 import { AppBar, Box, Toolbar, Typography } from '@mui/material';
-import SearchField from '../SearchField';
+import SearchBar from '../SearchBar';
 import { Link } from 'react-router-dom';
 
 const SearchAppBar = () => {
@@ -23,8 +23,8 @@ const SearchAppBar = () => {
         >
           Store
         </Typography>
-        <Box minWidth={'500px'}>
-          <SearchField />
+        <Box minWidth={500}>
+          <SearchBar />
         </Box>
       </Toolbar>
     </AppBar>

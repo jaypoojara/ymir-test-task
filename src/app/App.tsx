@@ -1,11 +1,11 @@
 import { Outlet } from 'react-router-dom';
-import { useDispatch, useSelector } from 'react-redux';
-import { RootState } from '../redux/store';
+import { useDispatch } from 'react-redux';
+import { useAppSelector } from '../redux/store';
 import { useEffect } from 'react';
-import { initItemsAction } from '../redux/data/slice';
+import { initItemsAction } from '../redux/productData/slice';
 
 function App() {
-  const loadState = useSelector((store: RootState) => store.data.initLoadState);
+  const loadState = useAppSelector((store) => store.data.initLoadState);
   const dispatch = useDispatch();
 
   useEffect(() => {

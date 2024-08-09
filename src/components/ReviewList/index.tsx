@@ -1,6 +1,6 @@
 import { List, Typography } from '@mui/material';
-import { Review } from '../../models/common/Review';
-import ReviewItem from '../ReviewItem';
+import { Review } from '../../types/Review';
+import Comment from '../Comment';
 
 type Props = {
   reviews: Review[];
@@ -22,7 +22,7 @@ const ReviewList = ({ reviews }: Props) => {
       }}
     >
       {reviews.map((review) => {
-        return <ReviewItem key={review.uniqueId} review={review} />;
+        return <Comment key={review.uniqueId} review={review} />;
       })}
     </List>
   );
