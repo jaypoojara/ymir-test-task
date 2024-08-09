@@ -21,7 +21,7 @@ The folder structure is as follows:
 
 ## Deployed URL
 
-### `https://voluble-eclair-be6441.netlify.app/`
+[https://voluble-eclair-be6441.netlify.app/](https://voluble-eclair-be6441.netlify.app/)
 
 ## Node Version: 
 
