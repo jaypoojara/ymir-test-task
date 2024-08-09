@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux';
 import { RootState } from '../../redux/store';
 import ListItem from '../ListItem';
 import { Item } from '../../models/common/Item';
-import { ChangeEvent, SyntheticEvent } from 'react';
+import { SyntheticEvent } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 const filterOptions = createFilterOptions<Item>({

@@ -3,7 +3,7 @@ import { Item } from '../../../../models/common/Item';
 import NotFound from '../NotFound';
 import Found from '../Found';
 
-interface Props {
+type Props = {
   item: Item | null;
 }
 

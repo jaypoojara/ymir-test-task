@@ -1,4 +1,4 @@
-import { Box, Chip, Slider, Typography } from '@mui/material';
+import { Box, Slider, Typography } from '@mui/material';
 import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from '../../../../redux/store';
 import { updatePriceFilter } from '../../../../redux/home/slice';

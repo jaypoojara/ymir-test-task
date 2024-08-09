@@ -1,8 +1,8 @@
-import { Box, List, Typography } from '@mui/material';
+import { List, Typography } from '@mui/material';
 import { Review } from '../../models/common/Review';
 import ReviewItem from '../ReviewItem';
 
-interface Props {
+type Props = {
   reviews: Review[];
 }
 
@@ -22,7 +22,7 @@ const ReviewList = ({ reviews }: Props) => {
       }}
     >
       {reviews.map((review) => {
-        return <ReviewItem review={review} />;
+        return <ReviewItem key={review.uniqueId} review={review} />;
       })}
     </List>
   );

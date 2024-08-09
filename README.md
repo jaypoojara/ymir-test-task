@@ -1,3 +1,5 @@
+Node Version: v18.16.0
+
 ### `yarn install`
 
 Installs the required dependencies
@@ -26,11 +28,13 @@ The codebase is in typescript and and has two pages with a search field in AppBa
 2. Product Page: This page has the product details and the product review. user can post a review as anonymous user and store the reviews in local indexed DB.
 
 The folder structure is as follows: 
-|-app: This has all the entry point/single use components for app initialization.
-|-components: This has all the global components which can be reused across pages/app.
-|-models: This has the data models(types) which are used in the app.
-|-pages: This the Route based Page components and related components inside it.
-|-redux: This dir has all the redux related logic and initialization along with its persistence and types.
+.
+└── src
+    ├── app: This has all the entry point/single use components for app initialization.
+    ├── components: This has all the global components which can be reused across pages/app.
+    ├── models: This has the data models(types) which are used in the app.
+    ├── pages: This the Route based Page components and related components inside it.
+    └── redux: This dir has all the redux related logic and initialization along with its persistence and types.
 
 The libraries and their use is as follows:
 

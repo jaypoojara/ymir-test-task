@@ -8,7 +8,7 @@ import {
 } from '@mui/material';
 import { Item } from '../../models/common/Item';
 
-interface Props {
+type Props = {
   item: Item;
   small?: boolean;
 }

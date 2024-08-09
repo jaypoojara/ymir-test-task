@@ -1,11 +1,11 @@
 import { Box, Chip, Typography } from '@mui/material';
 import { Item } from '../../../../models/common/Item';
-import { People, Star, StarOutline } from '@mui/icons-material';
+import { People, Star } from '@mui/icons-material';
 import Review from '../../../../components/Review';
 
-interface Props {
+type Props = {
   item: Item;
-}
+};
 
 const Found = ({ item }: Props) => {
   return (
@@ -19,7 +19,13 @@ const Found = ({ item }: Props) => {
         }}
         alt={item.title}
       />
-      <Typography mt={2} variant="h5" display={'flex'} gap={1} alignItems={'baseline'}>
+      <Typography
+        mt={2}
+        variant="h5"
+        display={'flex'}
+        gap={1}
+        alignItems={'baseline'}
+      >
         {item.title}{' '}
         <Chip
           size="small"

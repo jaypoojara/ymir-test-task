@@ -2,7 +2,7 @@ import { Box, Typography } from '@mui/material';
 import { Review } from '../../models/common/Review';
 import moment from 'moment';
 
-interface Props {
+type Props = {
   review: Review;
 }
 

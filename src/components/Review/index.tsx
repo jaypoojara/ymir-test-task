@@ -3,7 +3,7 @@ import useReviews from './useReviews';
 import NewReviewBox from '../NewReviewBox';
 import ReviewList from '../ReviewList';
 
-interface Props {
+type Props = {
   itemId: number;
 }
 

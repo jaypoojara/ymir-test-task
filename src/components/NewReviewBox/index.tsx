@@ -3,7 +3,7 @@ import { ChangeEvent, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { addReview } from '../../redux/data/slice';
 
-interface Props {
+type Props = {
   itemId: number;
 }
 

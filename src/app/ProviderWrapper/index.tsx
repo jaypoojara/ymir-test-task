@@ -5,7 +5,7 @@ import { persister, store } from '../../redux/store';
 import { ReactNode } from 'react';
 import { resetLoadState } from '../../redux/data/slice';
 
-interface Props {
+type Props = {
   children: ReactNode;
 }
 

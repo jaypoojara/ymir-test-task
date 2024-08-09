@@ -3,7 +3,7 @@ import { Item } from '../../models/common/Item';
 import ListItem from '../ListItem';
 import { Link } from 'react-router-dom';
 
-interface Props {
+type Props = {
   items: Item[];
   small?: boolean;
 }
