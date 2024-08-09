@@ -1,4 +1,33 @@
-Node Version: v18.16.0
+## Structure
+
+The codebase is in typescript and and has two pages with a search field in AppBar for searching through persisted data.
+
+1. HomePage: This page has the list of items persisted in the local indexed db using redux. Which supports categories filtering and price range filtering.
+2. Product Page: This page has the product details and the product review. user can post a review as anonymous user and store the reviews in local indexed DB.
+
+The folder structure is as follows:
+
+```hash
+
+└── src
+    ├── app: This has all the entry point/single use components for app initialization.
+    ├── components: This has all the global components which can be reused across pages/app.
+    ├── hooks: Application related custom hooks.
+    ├── types: This has the data models(types) which are used in the app.
+    ├── pages: This the Route based Page components and related components inside it.
+    ├── redux: This dir has all the redux related logic and initialization along with its persistence and types.
+    └── utils: This dir has all the helper functions.
+```
+
+## Deployed URL
+
+### `https://voluble-eclair-be6441.netlify.app/`
+
+## Node Version: 
+
+### `v18.16.0`
+
+## Scripts
 
 ### `yarn install`
 
@@ -20,30 +49,13 @@ It correctly bundles React in production mode and optimizes the build for the be
 The build is minified and the filenames include the hashes.\
 Your app is ready to be deployed!
 
-# Structure
+## Libraries
 
-The codebase is in typescript and and has two pages with a search field in AppBar for searching through persisted data.
-
-1. HomePage: This page has the list of items persisted in the local indexed db using redux. Which supports categories filtering and price range filtering.
-2. Product Page: This page has the product details and the product review. user can post a review as anonymous user and store the reviews in local indexed DB.
-
-The folder structure is as follows:
-
-```hash
-
-└── src
-    ├── app: This has all the entry point/single use components for app initialization.
-    ├── components: This has all the global components which can be reused across pages/app.
-    ├── models: This has the data models(types) which are used in the app.
-    ├── pages: This the Route based Page components and related components inside it.
-    └── redux: This dir has all the redux related logic and initialization along with its persistence and types.
-```
-
-The libraries and their use is as follows:
-
-1. React Router: For page routing
-2. Redux: For state management
-3. Saga: For async operations to be called with redux actions
-4. redux-persist: for local state persistence
-5. localForage: Indexed db for persistence to be used with redux-persist
-6. MUI: For UI styling
+| Name          | Purpose                                              |
+| :------------ | :--------------------------------------------------- |
+| React Router  | For page routing                                     |
+| Redux         | For state management                                 |
+| Saga          | For async operations to be called with redux actions |
+| redux-persist | for local state persistence                          |
+| localForage   | Indexed db for persistence to be used with           | redux-persist |
+| MUI           | For UI styling                                       |
